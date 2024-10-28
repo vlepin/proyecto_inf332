@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 export const NavBar = () => {
   const navLinkClass = ({ isActive }) => {
-    const classes = ['nav-bar__link']
+    const classes = ['nav-bar__link'] 
     if (isActive) classes.push('nav-bar__link--active')
     return classes.join(' ')
   }
@@ -11,17 +11,30 @@ export const NavBar = () => {
     <nav className='nav-bar'>
       <NavLink
         className={navLinkClass}
-        to='/'
+        to='/App'
       >
-        Inicio
+        Eventos
       </NavLink>
       <NavLink
         className={navLinkClass}
-        to='/lightbulb'
+        to='/register'
       >
-        Ampolleta
+        Registrar
+      </NavLink>
+      <NavLink
+      className={navLinkClass}
+      to='/delete' 
+      >
+        Eliminar
+      </NavLink>
+      <NavLink
+      className={navLinkClass}
+      to='/edit' 
+      >
+        Editar
       </NavLink>
     </nav>
+    
   )
 }
  

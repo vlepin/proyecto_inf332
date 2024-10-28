@@ -1,0 +1,47 @@
+body {
+    background-color: #f8f9fa; // Color de fondo suave
+    font-family: Arial, sans-serif; // Fuente básica
+  }
+  
+  .container {
+    max-width: 600px; // Ancho máximo del contenedor
+    margin: 2rem auto; // Centrando el contenedor
+    padding: 1rem;
+    background: white; // Fondo blanco para el contenedor
+    border-radius: 5px; // Bordes redondeados
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); // Sombra sutil
+  }
+  
+  .list-group {
+    list-style-type: none; // Sin viñetas en la lista
+    padding: 0; // Sin padding en la lista
+  }
+  
+  .list-group-item {
+    display: flex;
+    justify-content: space-between; // Espaciado entre el texto y el botón
+    align-items: center; // Centrar verticalmente
+    padding: 1rem; // Espaciado interno
+    border: 1px solid #ddd; // Borde gris claro
+    border-radius: 5px; // Bordes redondeados
+    margin-bottom: 1rem; // Espaciado entre elementos
+  
+    &:hover {
+      background-color: #f1f1f1; // Color de fondo al pasar el mouse
+    }
+  
+    .btn {
+      margin-left: 10px; // Espaciado entre el texto y el botón
+    }
+  }
+  
+  .btn-danger {
+    background-color: #dc3545; // Color de fondo rojo para el botón de eliminación
+    border: none; // Sin borde
+    color: white; // Color del texto blanco
+  
+    &:hover {
+      background-color: #c82333; // Color al pasar el mouse
+    }
+  }
+  

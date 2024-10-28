@@ -1,12 +1,23 @@
-import React from 'react'
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import RegisterPage from './register_page';
+import DeletePage from './delete_page';
+import EditPage from './edit_page';
+import NavBar from '../components/nav_bar';
 
-export const HomePage = () => {
+function App() {
   return (
-    <>
-      <p>¡Te damos la bienvenida a la Interfaz energética!</p>
-      <p>En esta página encontraras una 💡 ampolleta que podrás encender y apagar con un botón</p>
-    </>
-  )
+    <Router>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/delete" element={<DeletePage />} />
+        <Route path="/edit" element={<EditPage />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default HomePage
+
+export default App;
