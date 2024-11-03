@@ -35,5 +35,9 @@ Now you can open http://localhost:5050
 - Sample stylesheets were written using the [BEM](https://getbem.com/) structure
 =======
 # proyecto_inf332
+<<<<<<< HEAD
+Página de Gestión de Eventos
+=======
 Página de Gestión de Eventos
 
+>>>>>>> d55c9e3875671a3827e7d3bdf155b2c15bf9153f
