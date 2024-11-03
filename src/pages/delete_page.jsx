@@ -1,10 +1,19 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom'; // Importa useNavigate
 import '../stylesheets/layout/delete_page.scss'; 
 
 const DeletePage = () => {
-  const handleConfirmDeletion = (event) => {
-    if (!window.confirm("¿Estás seguro de que deseas eliminar este evento?")) {
-      event.preventDefault();
+  const navigate = useNavigate(); // Crea la instancia de navigate
+
+  const handleConfirmDeletion = (event, eventId) => {
+    event.preventDefault(); // Evita el comportamiento por defecto del formulario
+
+    if (window.confirm("¿Estás seguro de que deseas eliminar este evento?")) {
+      // Aquí puedes agregar la lógica para eliminar el evento.
+      // Simularemos la eliminación y redireccionamos a la página de inicio.
+
+      console.log(`Evento con ID ${eventId} eliminado.`); // Simula la eliminación del evento
+      navigate('/home'); // Redirige a la página de inicio
     }
   };
 
@@ -12,7 +21,7 @@ const DeletePage = () => {
     <div>
       <div className="container">
         <h1>Eliminar Evento</h1>
-        <form action="exito.html" method="POST">
+        <form>
           <ul className="list-group">
             {[
               { id: 1, name: "Jornada de Salud Integral y promoción del autocuidado Sede Concepción" },
@@ -26,11 +35,9 @@ const DeletePage = () => {
               <li className="list-group-item d-flex justify-content-between align-items-center" key={event.id}>
                 {event.name}
                 <button
-                  type="submit"
-                  name="eventId"
-                  value={event.id}
+                  type="button" // Cambia a tipo "button"
                   className="btn btn-danger btn-sm"
-                  onClick={handleConfirmDeletion}
+                  onClick={(e) => handleConfirmDeletion(e, event.id)} // Pasa el evento y el id
                 >
                   Eliminar
                 </button>

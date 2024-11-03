@@ -1,0 +1,37 @@
+.event-details {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  
+    &__content {
+      display: flex;
+      align-items: flex-start; /* Alinea los elementos al inicio */
+      gap: 20px; /* Espacio entre la imagen y la información */
+    }
+  
+    &__image {
+      flex: 1; /* Ocupa una parte del espacio */
+      max-width: 400px; /* Ancho máximo de la imagen */
+      height: auto;
+      border-radius: 8px;
+    }
+  
+    &__info {
+      flex: 2; /* Ocupa más espacio que la imagen */
+      padding: 15px; /* Espaciado interno */
+      text-align: left;
+    }
+  
+    h1 {
+      margin-bottom: 15px;
+    }
+  
+    p {
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+  }
+  

@@ -11,7 +11,7 @@ export const NavBar = () => {
     <nav className='nav-bar'>
       <NavLink
         className={navLinkClass}
-        to='/App'
+        to='/home'
       >
         Eventos
       </NavLink>

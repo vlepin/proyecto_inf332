@@ -1,11 +1,31 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom'; // Importa useNavigate
 import '../stylesheets/layout/edit_page.scss'; // Asegúrate de tener este archivo para estilos
 
 const EditPage = () => {
+    const navigate = useNavigate(); // Crea la instancia de navigate
+
+    const handleSubmit = (event) => {
+        event.preventDefault(); // Evita el comportamiento por defecto del formulario
+
+        // Muestra la ventana de confirmación
+        const confirmSave = window.confirm("¿Estás seguro de que deseas guardar los cambios?");
+        
+        if (confirmSave) {
+            // Aquí puedes agregar la lógica para guardar los cambios.
+            console.log("Cambios guardados."); // Simula la acción de guardar cambios
+
+            // Redirige a la página de inicio
+            navigate('/home'); // Redirige a la página de inicio
+        } else {
+            console.log("Cambios no guardados."); // Si el usuario cancela
+        }
+    };
+
     return (
         <div className="container">
             <h1>Editar Evento</h1>
-            <form action="exito.html" method="POST">
+            <form onSubmit={handleSubmit}> {/* Usa onSubmit para manejar el envío */}
                 {/* ID del Evento (oculto) */}
                 <input type="hidden" id="eventId" name="eventId" value="12345" /> {/* Aquí se almacena el ID del evento a modificar */}
 

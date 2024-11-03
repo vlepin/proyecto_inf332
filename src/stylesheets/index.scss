@@ -1,13 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap'); /* Incluye diferentes pesos */
 @import './layout/index.scss';
 @import './nav-bar/index.scss';
 
 html, body {
   padding: 0;
   margin: 0;
+  background-color: #f4f4f4; /* Fondo claro general */
+  color: #333; /* Color de texto predeterminado */
+  line-height: 1.6; /* Mejor legibilidad */
 }
 
 * {
   font-family: 'Open Sans', sans-serif;
+  box-sizing: border-box; /* Estilo moderno de box-sizing */
+}
+
+/* Mejoras adicionales */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 15px;
+  font-weight: 600; /* Negrita para títulos */
+}
+
+p {
+  margin: 0 0 15px;
+}
+
+a {
+  text-decoration: none;
+  color: #0066cc; /* Color de enlaces */
+  transition: color 0.3s; /* Transición suave */
+}
+
+a:hover {
+  color: #004a99; /* Cambio de color al pasar el cursor */
 }

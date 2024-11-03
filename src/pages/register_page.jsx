@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Importa useNavigate
 import '../stylesheets/layout/register_page.scss';
 
 const RegisterPage = () => {
@@ -12,19 +13,26 @@ const RegisterPage = () => {
     eventPublic: 'abierto',
     eventModality: 'presencial',
     eventTheme: 'cultura'
-  })
+  });
+
+  const navigate = useNavigate(); // Crea la instancia de navigate
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
-    })
-  }
+    });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Datos del evento:', formData);
     alert("¡Evento registrado con éxito!");
+    
+    // Aquí puedes agregar la lógica para guardar el evento, si es necesario
+
+    // Redirige a la página de inicio después de registrar el evento
+    navigate('/home');
   };
 
   return (
@@ -171,7 +179,7 @@ const RegisterPage = () => {
         <button type="submit" className="btn btn-primary">Registrar Evento</button>
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default RegisterPage
+export default RegisterPage;

@@ -1,5 +1,8 @@
 .nav-bar {
   display: flex;
-  background-color: #ccc;
-  padding-left: 20px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333; /* Fondo oscuro */
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
