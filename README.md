@@ -1,8 +1,14 @@
-# frontend-sample-app
+# Integrantes:
 
-Basic Frontend Development Environment to start an app with Webpack
+- Tamara León
+- Matías Palma
+- Valentina Lepin
 
-This repo includes `Webpack` to start an environment to build frontend views using `React`.
+# Frontend de Página de Gestión
+
+Entorno de desarrollo frontend básico para Tracker de eventos en la universidad.
+
+Este repositorio incluye `Webpack` para iniciar un entorno para crear vistas frontend usando `React`.
 
 ### Requirements
 
