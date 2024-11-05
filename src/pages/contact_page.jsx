@@ -1,45 +1,100 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Importa useNavigate
-import '../stylesheets/layout/register_page.scss';
+import { useNavigate } from 'react-router-dom';
+import '../stylesheets/layout/contact_page.scss';
 
-const RegisterPage = () => {
+const ContactPage = () => {
   const [formData, setFormData] = useState({
-    eventName: '',
+    name: '',
+    email: '',
+    contactNumber: '', // Nuevo campo para el número de contacto
+    eventName: '', // Asegúrate de que este campo esté incluido
     eventDate: '',
-    eventTime: '',
+    eventTime: '', 
     eventEndTime: '',
     eventDescription: '',
     eventLocation: '',
-    eventPublic: 'abierto',
-    eventModality: 'presencial',
-    eventTheme: 'cultura',
+    eventPublic: 'abierto', // Valor por defecto
+    eventModality: 'presencial', // Valor por defecto
+    eventTheme: 'cultura', // Valor por defecto
     eventImage: null, // Estado para la imagen
   });
 
-  const navigate = useNavigate(); // Crea la instancia de navigate
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    const { name, value, type, files } = e.target;
+    if (type === 'file') {
+      setFormData({
+        ...formData,
+        [name]: files[0] // Guarda el archivo de imagen seleccionado
+      });
+    } else {
+      setFormData({
+        ...formData,
+        [name]: value
+      });
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Datos del evento:', formData);
-    alert("¡Evento registrado con éxito!");
-    
-    // Aquí puedes agregar la lógica para guardar el evento, si es necesario
+    console.log('Datos del contacto:', formData);
+    alert("¡Formulario enviado con éxito!");
 
-    // Redirige a la página de inicio después de registrar el evento
+    // Aquí puedes agregar la lógica para manejar la imagen o enviarla a un servidor
+
+    // Redirige a la página de inicio después de enviar el formulario
     navigate('/home');
   };
 
   return (
     <div className="container">
-      <h1>Registrar Evento</h1>
+      <h1>Publicación de evento</h1>
+      <h2>Este formulario es para la solicitud de publicación</h2>
       <form onSubmit={handleSubmit}>
+        {/* Nombre */}
+        <div className="form-group">
+          <label htmlFor="name">Nombre del Organizador o Institución</label>
+          <input
+            type="text"
+            className="form-control"
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        {/* Email */}
+        <div className="form-group">
+          <label htmlFor="email">Correo Electrónico</label>
+          <input
+            type="email"
+            className="form-control"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        {/* Número de Contacto */}
+        <div className="form-group">
+          <label htmlFor="contactNumber">Número de Contacto</label>
+          <input
+            type="tel" // Cambia a 'tel' para aceptar números de teléfono
+            className="form-control"
+            id="contactNumber"
+            name="contactNumber"
+            value={formData.contactNumber}
+            onChange={handleChange}
+            required
+            placeholder="Ej: +56999999999" // Placeholder opcional
+          />
+        </div>
+
         {/* Nombre del Evento */}
         <div className="form-group">
           <label htmlFor="eventName">Nombre del Evento</label>
@@ -167,7 +222,7 @@ const RegisterPage = () => {
             value={formData.eventTheme}
             onChange={handleChange}
             required
-          > 
+          >
             <option value="cultura">Cultura, arte y recreación</option>
             <option value="salud">Salud</option>
             <option value="inclusion">Inclusión</option>
@@ -176,7 +231,7 @@ const RegisterPage = () => {
           </select>
         </div>
 
-          {/* Imagen del evento */}
+        {/* Imagen del evento */}
         <div className="form-group">
           <label htmlFor="eventImage">Imagen del Evento</label>
           <input
@@ -190,10 +245,10 @@ const RegisterPage = () => {
         </div>
 
         {/* Botón de enviar */}
-        <button type="submit" className="btn btn-primary">Registrar Evento</button>
+        <button type="submit" className="btn btn-primary">Enviar</button>
       </form>
     </div>
   );
 };
 
-export default RegisterPage;
+export default ContactPage;

@@ -41,8 +41,24 @@
     margin-left: 10px;
     margin-bottom: 10px;
   }
+
+  .event-card__edit-button {
+    background-color: #0066cc;
+    color: #fff;
+    border: none;
+    padding: 100px 150px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
   
   .event-card__details-button:hover {
+    background-color: #0055a3;
+  }
+
+  .event-card__edit-button:hover {
     background-color: #0055a3;
   }
   

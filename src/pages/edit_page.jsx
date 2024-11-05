@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom'; // Importa useNavigate
 import '../stylesheets/layout/edit_page.scss'; // Asegúrate de tener este archivo para estilos
-
+ 
 const EditPage = () => {
     const navigate = useNavigate(); // Crea la instancia de navigate
 
@@ -138,6 +138,7 @@ const EditPage = () => {
                         <option value="otros">Otros</option>
                     </select>
                 </div>
+                
 
                 {/* Botón de modificar */}
                 <button type="submit" className="btn btn-primary">Guardar Cambios</button>

@@ -1,0 +1,65 @@
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #333333;
+      text-align: center;
+    }
+  
+    .form-group {
+      margin-bottom: 15px;
+  
+      label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+        color: #555555;
+      }
+  
+      .form-control {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 1rem;
+        transition: border-color 0.3s ease;
+  
+        &:focus {
+          border-color: #007bff;
+          outline: none;
+        }
+      }
+  
+      input[type="file"] {
+        padding: 3px; // Ajuste de padding para el campo de archivo
+      }
+  
+      textarea.form-control {
+        resize: vertical;
+      }
+    }
+  
+    .btn-primary {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: #ffffff;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+  }
+  

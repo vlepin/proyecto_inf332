@@ -1,12 +1,18 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../stylesheets/layout/EventCard.scss'; 
+import { useAuth } from '../contexts/AuthContext'; // Asegúrate de ajustar la ruta
+import '../stylesheets/layout/EventCard.scss';
 
 const EventCard = ({ event }) => {
-  const navigate = useNavigate(); // Hook para redirigir a otra página
+  const navigate = useNavigate();
+  const { isLoggedIn } = useAuth(); // Obtener el estado de autenticación
 
   const handleDetailsClick = () => {
-    navigate('/event-details'); // Redirige a la página de detalles genérica
+    navigate('/event-details');
+  };
+
+  const handleEditClick = () => { // Idealmente podriamos agregar tambien un boton de editar en la pagina de eventos
+    navigate('/edit');
   };
 
   return (
@@ -16,6 +22,11 @@ const EventCard = ({ event }) => {
       <button className="event-card__details-button" onClick={handleDetailsClick}>
         Más detalles
       </button>
+      {isLoggedIn && ( 
+        <button className="event-card__edit-button" onClick={handleEditClick}>
+          Editar
+        </button>
+      )}
     </div>
   );
 };
