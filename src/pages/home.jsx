@@ -8,7 +8,7 @@ import evento3 from '../assets/evento3.jpg';
 
 const events = [
   {
-    name: '1° Festival por la Salud Mental Campus Vitacura',
+    name: '1° Festival por la Salud Mental',
     image: evento1, // Usa la imagen importada
     date: '10-11-2024',
     startTime: '19:00',

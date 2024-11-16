@@ -1,0 +1,38 @@
+[
+  {
+    "name": "1° Festival por la Salud Mental Campus Vitacura",
+    "image": "http://localhost:3000/assets/evento1.jpg",
+    "date": "10-11-2024",
+    "startTime": "19:00",
+    "endTime": "21:00",
+    "description": "Un evento de jazz en vivo...",
+    "location": "Auditorio Central",
+    "audience": "Abierto",
+    "modality": "Presencial",
+    "theme": "Cultura, arte y recreación"
+  },
+  {
+    "name": "Operativo de medicina preventiva Campus Casa Central Valparaíso",
+    "image": "http://localhost:3000/assets/evento2.jpg",
+    "date": "10-11-2024",
+    "startTime": "19:00",
+    "endTime": "21:00",
+    "description": "Un evento de jazz en vivo...",
+    "location": "Auditorio Central",
+    "audience": "Abierto",
+    "modality": "Presencial",
+    "theme": "Cultura, arte y recreación"
+  },
+  {
+    "name": "Feria de la Salud Campus Casa Central Valparaíso",
+    "image": "http://localhost:3000/assets/evento3.jpg",
+    "date": "10-11-2024",
+    "startTime": "19:00",
+    "endTime": "21:00",
+    "description": "Un evento de jazz en vivo...",
+    "location": "Auditorio Central",
+    "audience": "Abierto",
+    "modality": "Presencial",
+    "theme": "Cultura, arte y recreación"
+  }
+]

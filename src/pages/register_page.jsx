@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Importa useNavigate
+import { useNavigate } from 'react-router-dom';
 import '../stylesheets/layout/register_page.scss';
 
 const RegisterPage = () => {
@@ -11,17 +11,19 @@ const RegisterPage = () => {
     eventDescription: '',
     eventLocation: '',
     eventPublic: 'abierto',
+    eventTicket: 'gratuito',
     eventModality: 'presencial',
     eventTheme: 'cultura',
-    eventImage: null, // Estado para la imagen
+    eventImage: null,
   });
 
-  const navigate = useNavigate(); // Crea la instancia de navigate
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
+    const { name, value, files } = e.target;
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [name]: files ? files[0] : value,
     });
   };
 
@@ -29,10 +31,6 @@ const RegisterPage = () => {
     e.preventDefault();
     console.log('Datos del evento:', formData);
     alert("¡Evento registrado con éxito!");
-    
-    // Aquí puedes agregar la lógica para guardar el evento, si es necesario
-
-    // Redirige a la página de inicio después de registrar el evento
     navigate('/home');
   };
 
@@ -40,7 +38,6 @@ const RegisterPage = () => {
     <div className="container">
       <h1>Registrar Evento</h1>
       <form onSubmit={handleSubmit}>
-        {/* Nombre del Evento */}
         <div className="form-group">
           <label htmlFor="eventName">Nombre del Evento</label>
           <input
@@ -54,63 +51,58 @@ const RegisterPage = () => {
           />
         </div>
 
-        {/* Fecha del Evento */}
-        <div className="form-group">
-          <label htmlFor="eventDate">Fecha del Evento</label>
-          <input
-            type="date"
-            className="form-control"
-            id="eventDate"
-            name="eventDate"
-            value={formData.eventDate}
-            onChange={handleChange}
-            required
-          />
+        <div className="form-row">
+          <div className="form-group">
+            <label htmlFor="eventDate">Fecha del Evento</label>
+            <input
+              type="date"
+              className="form-control"
+              id="eventDate"
+              name="eventDate"
+              value={formData.eventDate}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="eventTime">Hora de Inicio</label>
+            <input
+              type="time"
+              className="form-control"
+              id="eventTime"
+              name="eventTime"
+              value={formData.eventTime}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="eventEndTime">Hora de Fin</label>
+            <input
+              type="time"
+              className="form-control"
+              id="eventEndTime"
+              name="eventEndTime"
+              value={formData.eventEndTime}
+              onChange={handleChange}
+              required
+            />
+          </div>
         </div>
 
-        {/* Hora de inicio */}
-        <div className="form-group">
-          <label htmlFor="eventTime">Hora de Inicio</label>
-          <input
-            type="time"
-            className="form-control"
-            id="eventTime"
-            name="eventTime"
-            value={formData.eventTime}
-            onChange={handleChange}
-            required
-          />
-        </div>
-
-        {/* Hora de fin */}
-        <div className="form-group">
-          <label htmlFor="eventEndTime">Hora de Fin</label>
-          <input
-            type="time"
-            className="form-control"
-            id="eventEndTime"
-            name="eventEndTime"
-            value={formData.eventEndTime}
-            onChange={handleChange}
-            required
-          />
-        </div>
-
-        {/* Descripción */}
         <div className="form-group">
           <label htmlFor="eventDescription">Descripción</label>
           <textarea
             className="form-control"
             id="eventDescription"
             name="eventDescription"
-            rows="5"
+            rows="2"
             value={formData.eventDescription}
             onChange={handleChange}
             required
           />
         </div>
 
-        {/* Ubicación */}
         <div className="form-group">
           <label htmlFor="eventLocation">Ubicación</label>
           <input
@@ -124,7 +116,7 @@ const RegisterPage = () => {
           />
         </div>
 
-        {/* Público */}
+        <div className="form-row">
         <div className="form-group">
           <label htmlFor="eventPublic">Público</label>
           <select
@@ -140,7 +132,15 @@ const RegisterPage = () => {
           </select>
         </div>
 
-        {/* Modalidad */}
+        {/* Entrada */}
+                <div className="form-group">
+                    <label htmlFor="eventTicket">Entrada</label>
+                    <select className="form-control" id="eventTicket" name="eventTicket" value={formData.eventTicket} onChange={handleChange} required>
+                        <option value="gratuito">Entrada gratuita</option>
+                        <option value="pagado">Entrada con cargo</option>
+                    </select>
+        </div>
+
         <div className="form-group">
           <label htmlFor="eventModality">Modalidad</label>
           <select
@@ -157,7 +157,6 @@ const RegisterPage = () => {
           </select>
         </div>
 
-        {/* Temática */}
         <div className="form-group">
           <label htmlFor="eventTheme">Temática</label>
           <select
@@ -167,7 +166,7 @@ const RegisterPage = () => {
             value={formData.eventTheme}
             onChange={handleChange}
             required
-          > 
+          >
             <option value="cultura">Cultura, arte y recreación</option>
             <option value="salud">Salud</option>
             <option value="inclusion">Inclusión</option>
@@ -175,8 +174,8 @@ const RegisterPage = () => {
             <option value="otros">Otros</option>
           </select>
         </div>
+        </div>
 
-          {/* Imagen del evento */}
         <div className="form-group">
           <label htmlFor="eventImage">Imagen del Evento</label>
           <input
@@ -189,7 +188,6 @@ const RegisterPage = () => {
           />
         </div>
 
-        {/* Botón de enviar */}
         <button type="submit" className="btn btn-primary">Registrar Evento</button>
       </form>
     </div>

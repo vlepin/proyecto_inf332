@@ -1,36 +1,49 @@
 .container {
-    max-width: 600px;
+    max-width: 480px;
     margin: 20px auto;
-    padding: 20px;
+    padding: 15px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 
     h1 {
         text-align: center;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
+        font-size: 1.5rem;
     }
 
     .form-group {
         margin-bottom: 15px;
+
+        label {
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        input, select, textarea {
+            font-size: 0.9rem;
+            padding: 8px;
+            width: 100%;
+        }
+    }
+
+    .form-row {
+        display: flex;
+        justify-content: space-between;
+
+        .form-group.half-width {
+            flex: 1;
+            margin-right: 10px;
+        }
+
+        .form-group.half-width:last-child {
+            margin-right: 0;
+        }
     }
 
     .btn-primary {
         width: 100%;
+        font-size: 1rem;
+        padding: 10px;
     }
 }
-
-.image-preview {
-    margin: 10px 0;
-    display: flex;
-    justify-content: center;
-
-    .event-image {
-        width: 100%;
-        max-width: 300px;  // Limita el ancho máximo de la imagen
-        height: auto;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-}
-

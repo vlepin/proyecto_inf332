@@ -14,6 +14,7 @@ const ContactPage = () => {
     eventDescription: '',
     eventLocation: '',
     eventPublic: 'abierto', // Valor por defecto
+    eventTicket: 'gratuito', 
     eventModality: 'presencial', // Valor por defecto
     eventTheme: 'cultura', // Valor por defecto
     eventImage: null, // Estado para la imagen
@@ -49,12 +50,13 @@ const ContactPage = () => {
 
   return (
     <div className="container">
-      <h1>Publicación de evento</h1>
-      <h2>Este formulario es para la solicitud de publicación</h2>
+      <h1>Formulario de Publicación</h1>
       <form onSubmit={handleSubmit}>
+      <h2>Información de contacto del Organizador</h2>
+
         {/* Nombre */}
         <div className="form-group">
-          <label htmlFor="name">Nombre del Organizador o Institución</label>
+          <label htmlFor="name">Nombre</label>
           <input
             type="text"
             className="form-control"
@@ -66,6 +68,7 @@ const ContactPage = () => {
           />
         </div>
 
+        <div className="form-row">
         {/* Email */}
         <div className="form-group">
           <label htmlFor="email">Correo Electrónico</label>
@@ -94,6 +97,9 @@ const ContactPage = () => {
             placeholder="Ej: +56999999999" // Placeholder opcional
           />
         </div>
+        </div>
+
+        <h2>Información del evento</h2>
 
         {/* Nombre del Evento */}
         <div className="form-group">
@@ -109,6 +115,7 @@ const ContactPage = () => {
           />
         </div>
 
+        <div className="form-row">
         {/* Fecha del Evento */}
         <div className="form-group">
           <label htmlFor="eventDate">Fecha del Evento</label>
@@ -150,6 +157,7 @@ const ContactPage = () => {
             required
           />
         </div>
+        </div>
 
         {/* Descripción */}
         <div className="form-group">
@@ -158,7 +166,7 @@ const ContactPage = () => {
             className="form-control"
             id="eventDescription"
             name="eventDescription"
-            rows="5"
+            rows="2"
             value={formData.eventDescription}
             onChange={handleChange}
             required
@@ -179,6 +187,7 @@ const ContactPage = () => {
           />
         </div>
 
+        <div className="form-row">
         {/* Público */}
         <div className="form-group">
           <label htmlFor="eventPublic">Público</label>
@@ -193,6 +202,15 @@ const ContactPage = () => {
             <option value="abierto">Abierto</option>
             <option value="cerrado">Cerrado</option>
           </select>
+        </div>
+
+        {/* Entrada */}
+        <div className="form-group">
+                    <label htmlFor="eventTicket">Entrada</label>
+                    <select className="form-control" id="eventTicket" name="eventTicket" value={formData.eventTicket} onChange={handleChange} required>
+                        <option value="gratuito">Entrada gratuita</option>
+                        <option value="pagado">Entrada con cargo</option>
+                    </select>
         </div>
 
         {/* Modalidad */}
@@ -229,6 +247,7 @@ const ContactPage = () => {
             <option value="admision">Admisión</option>
             <option value="otros">Otros</option>
           </select>
+        </div>
         </div>
 
         {/* Imagen del evento */}

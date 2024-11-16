@@ -26,22 +26,23 @@ const RequestDetailPage = () => {
         
         {/* Información de la persona que realiza la solicitud */}
         <h2>Información del Solicitante</h2>
-        <p><strong>Nombre:</strong> Valentina</p>
+        <p><strong>Nombre:</strong> Juan</p>
         <p><strong>Teléfono:</strong> +56999999999</p>
         <p><strong>Correo:</strong> correo@correo.cl</p>
 
         {/* Información del evento */}
         <h2>Detalles del Evento</h2>
         <img src={evento1} alt="Evento" className="event-image" />
-        <p><strong>Nombre del Evento:</strong> 1° Festival por la Salud Mental Campus Vitacura</p>
-        <p><strong>Fecha:</strong> 10-11-2024</p>
-        <p><strong>Hora de Inicio:</strong> 19:00</p>
-        <p><strong>Hora de Finalización:</strong> 21:00</p>
-        <p><strong>Descripción:</strong> Un evento de jazz en vivo...</p>
-        <p><strong>Ubicación:</strong> Auditorio Central</p>
-        <p><strong>Público:</strong> Abierto</p>
+        <p><strong>Nombre del Evento:</strong> 1° Festival por la Salud Mental</p>
+        <p><strong>Fecha:</strong> 7-10-2024</p>
+        <p><strong>Hora de Inicio:</strong> 12:30</p>
+        <p><strong>Hora de Fin:</strong> 13:40</p>
+        <p><strong>Descripción:</strong> Evento enfocado en la salud mental de nuestra comunidad, incluye actividades y talleres </p>
+        <p><strong>Ubicación:</strong> Auditorio Central, Campus San Joaquín, Santiago</p>
+        <p><strong>Público:</strong> Cerrado</p>
+        <p><strong>Entrada:</strong> Gratuita</p>
         <p><strong>Modalidad:</strong> Presencial</p>
-        <p><strong>Tema:</strong> Cultura, arte y recreación</p>
+        <p><strong>Tema:</strong> Salud</p>
 
         <div className="button-group">
           <button className="btn btn-success" onClick={handleAccept}>Aceptar</button>
